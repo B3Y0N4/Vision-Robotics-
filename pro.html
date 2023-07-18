@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Add the provided CSS code here */
+      /* CSS code removed for brevity. Please add the provided CSS code here. */ /* colors */
+      :root {
+        --master-grey: #f0f0f0;
+        --master-l-10: #e6e6e6;
+        --master-d-10: #262626;
+        --master-d-15: #1a1a1a;
+        --font-base: #808080;
+        --font-dark: #333333;
+        --font-spot: #08c;
+      }
+
+      /* one breakpoint is enough for this demo */
+      @media (max-width: 600px) {
+        body {
+          font-size: 70%;
+        }
+      }
+
+      /* reset and styling stuff */
+      *,
+      *:before,
+      *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        font-family: "Myriad Pro", sans-serif;
+        font-size: 100%;
+        line-height: 1.5;
+        color: var(--font-base);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--font-spot);
+      }
+
+      strong {
+        font-weight: normal;
+        color: var(--font-dark);
+      }
+
+      .row {
+        display: flex;
+      }
+
+      .item-content {
+        position: relative;
+        width: 100%;
+        max-width: 25rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .item-img {
+        flex: 0 0 70%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        float: left;
+      }
+
+      .item-img img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .item-caption {
+        flex: 0 0 30%;
+        padding: 1rem;
+        box-sizing: border-box;
+        text-align: right;
+        color: white;
+      }
+
+      /* a figure element that wraps the image and the caption */
+      .item-content {
+        transform: translateZ(0);
+      }
+
+      /* additional wrap for the image */
+      .item-img {
+        transform-origin: 50% 50%;
+      }
+
+      /* animation for the image */
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(-5%);
+        }
+        50% {
+          transform: translateY(0);
+        }
+      }
+
+      /* the caption */
+      .item-caption {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+        text-align: right;
+        color: white;
+      }
+
+      .item-caption p {
+        font-size: 87.5%;
+        line-height: 1.333;
+        margin-bottom: 1.25rem;
+      }
+
+      .item-caption p a {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 0.3rem;
+      }
+
+      .item-caption p a:before {
+        content: "";
+        position: absolute;
+        right: 1rem;
+        bottom: 3px;
+        left: 0;
+        height: 1px;
+        background-color: var(--font-spot);
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+
+      .item-caption p a:after {
+        content: "\003E";
+        padding-left: 0.5rem;
+        text-decoration: none;
+      }
+
+      .item-caption p a:hover:before,
+      .item-caption p a:active:before,
+      .item-caption p a:focus:before {
+        opacity: 0.5;
+      }
+    </style>
+    <title>Perspective Scrolling Concept</title>
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="item-content group">
+        <div class="item-img">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/aw-white.png"
+            alt=""
+          />
+        </div>
+        <div class="item-caption">
+          <p>
+            <strong>38mm and 42mm Case</strong><br />
+            7000 Series Silver Aluminum<br />
+            Ion-X Glass<br />
+            Retina Display<br />
+            Composite Back
+          </p>
+          <p>
+            <strong>Sport Band</strong><br />
+            White Fluoroelastomer<br />
+            Stainless Steel Pin
+          </p>
+          <p>
+            <a href="#">View 38mm in the store</a><br />
+            <a href="#">View 42mm in the store</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="item-content group">
+        <div class="item-img">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/aw-blue.png"
+            alt=""
+          />
+        </div>
+        <div class="item-caption">
+          <p>
+            <strong>38mm and 42mm Case</strong><br />
+            7000 Series Silver Aluminum<br />
+            Ion-X Glass<br />
+            Retina Display<br />
+            Composite Back
+          </p>
+          <p>
+            <strong>Sport Band</strong><br />
+            Blue Fluoroelastomer<br />
+            Stainless Steel Pin
+          </p>
+          <p>
+            <a href="#">View 38mm in the store</a><br />
+            <a href="#">View 42mm in the store</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="item-content group">
+        <div class="item-img">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/aw-green.png"
+            alt=""
+          />
+        </div>
+        <div class="item-caption">
+          <p>
+            <strong>38mm and 42mm Case</strong><br />
+            7000 Series Silver Aluminum<br />
+            Ion-X Glass<br />
+            Retina Display<br />
+            Composite Back
+          </p>
+          <p>
+            <strong>Sport Band</strong><br />
+            Green Fluoroelastomer<br />
+            Stainless Steel Pin
+          </p>
+          <p>
+            <a href="#">View 38mm in the store</a><br />
+            <a href="#">View 42mm in the store</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="item-content group">
+        <div class="item-img">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/aw-red.png"
+            alt=""
+          />
+        </div>
+        <div class="item-caption">
+          <p>
+            <strong>38mm and 42mm Case</strong><br />
+            7000 Series Silver Aluminum<br />
+            Ion-X Glass<br />
+            Retina Display<br />
+            Composite Back
+          </p>
+          <p>
+            <strong>Sport Band</strong><br />
+            Pink Fluoroelastomer<br />
+            Stainless Steel Pin
+          </p>
+          <p>
+            <a href="#">View 38mm in the store</a><br />
+            <a href="#">View 42mm in the store</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>
+        A concept for perspective scrolling in CSS by
+        <a href="https://codepen.io/Hornebom/" target="_blank">Hornebom</a>
+      </p>
+      <p>
+        You can dig the source code
+        <a href="https://codepen.io/Hornebom/pen/zGKVva">here</a>
+      </p>
+    </footer>
+  </body>
+</html>
