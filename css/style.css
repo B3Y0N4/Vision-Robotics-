@@ -87,7 +87,7 @@ h6,
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
   padding: 20px 0;
-  color: var(--dark) !important;
+  color: var(--light) !important;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -147,7 +147,7 @@ h6,
 
   .sticky-top.navbar-light {
     position: fixed;
-    background: #ffffff;
+    background: #15233c;
   }
 
   .navbar-light .navbar-nav .nav-link::before {
@@ -238,13 +238,13 @@ h6,
   position: relative;
   height: 350px;
   padding: 30px 25px;
-  background: #ffffff;
+  background: #15233c;
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
   transition: 0.5s;
 }
 
 .service-item:hover {
-  background: var(--primary);
+  background: var(--dark);
 }
 
 .service-item .service-icon {
@@ -254,13 +254,13 @@ h6,
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--light);
-  background: url(../img/icon-shape-primary.png) center center no-repeat;
+  color: var(--secondary);
+  background: url(../img/i) center center no-repeat;
   transition: 0.5s;
 }
 
 .service-item:hover .service-icon {
-  color: var(--primary);
+  color: white;
   background: url(../img/icon-shape-white.png);
 }
 
@@ -271,72 +271,56 @@ h6,
 
 .service-item:hover h5,
 .service-item:hover p {
-  color: var(--light);
-}
-
-.service-item a.btn {
-  position: relative;
-  display: flex;
-  color: var(--primary);
-  transition: 0.5s;
-  z-index: 1;
-}
-
-.service-item:hover a.btn {
-  color: var(--primary);
-}
-
-.service-item a.btn::before {
-  position: absolute;
-  content: "";
-  width: 35px;
-  height: 35px;
-  top: 0;
-  left: 0;
-  border-radius: 35px;
-  background: #dddddd;
-  transition: 0.5s;
-  z-index: -1;
-}
-
-.service-item:hover a.btn::before {
-  width: 100%;
-  background: var(--light);
+  color: white;
 }
 
 /*** Team ***/
 .team-item {
   position: relative;
+  padding: 30px;
+  text-align: center;
   transition: 0.5s;
   z-index: 1;
 }
 
+.team-item::before,
 .team-item::after {
   position: absolute;
   content: "";
-  top: 3rem;
-  right: 3rem;
-  bottom: 0;
+  width: 100%;
+  height: 40%;
+  top: 0;
   left: 0;
-  border-radius: 10px;
+  border-radius: 5px;
   background: #ffffff;
-  box-shadow: 0 0 45px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.07);
   transition: 0.5s;
   z-index: -1;
 }
 
+.team-item::after {
+  top: auto;
+  bottom: 0;
+}
+
+.team-item:hover::before,
 .team-item:hover::after {
   background: var(--primary);
 }
 
 .team-item h5,
-.team-item small {
+.team-item p {
   transition: 0.5s;
 }
 
 .team-item:hover h5,
-.team-item:hover small {
-  color: var(--light);
+.team-item:hover p {
+  color: #ffffff;
+}
+
+.team-item img {
+  padding: 15px;
+  border: 1px solid var(--primary);
 }
 
 /*** FAQs ***/
@@ -460,6 +444,7 @@ h6,
 @media (min-width: 992px) {
   .container.facts {
     max-width: 100% !important;
+    background-color: #15233c !important;
   }
 
   .container.facts .facts-text {
@@ -490,14 +475,19 @@ h6,
     padding-right: calc(((100% - 1320px) / 2) + 0.75rem);
   }
 }
+.display-6.mb-5 {
+  color: #15233c;
+}
+.mb-0 {
+  color: #15233c;
+}
 
 /*** Youtube Video ***/
 .video {
   position: relative;
   height: 100%;
   min-height: 500px;
-  background: linear-gradient(rgba(15, 23, 43, 0.1), rgba(15, 23, 43, 0.1)),
-    url(../img/restorant_robot.hk);
+  background: linear-gradient(rgb(21, 35, 60), rgba(21, 35, 60));
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -509,6 +499,11 @@ h6,
   left: 0;
   width: 100%;
   height: 100%;
+}
+.col-md-6 {
+  .video {
+    background-color: white;
+  }
 }
 
 .video .btn-play {
@@ -523,4 +518,83 @@ h6,
 
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2300ff00' viewBox='0 0 8 8'%3E%3Cpath d='M2.5.5l-1.5 1.5 3 3-3 3 1.5 1.5 4-4z'/%3E%3C/svg%3E");
+}
+
+.img-container {
+  margin-top: -40px; /* Adjust this value to change the position */
+}
+
+.custom-container {
+  max-width: 10px; /* Adjust this value to set your desired maximum width */
+  margin: 0 auto; /* Center the container on the page if needed */
+}
+
+.custom-bg-color {
+  background-color: #15233c;
+  /* Add any additional styling for the container if needed */
+  /* padding: 20px; */
+}
+.custom-header {
+  background-color: #15233c;
+  color: white;
+  font-weight: bold;
+  padding-top: -5px;
+}
+
+.slick-list {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.slick-list .slick-slide {
+  font-size: 30px;
+  text-align: center;
+  padding: 40px 20px;
+  line-height: 2;
+  font-weight: 700;
+}
+.slick-list .slick-slide:nth-child(even) {
+  background-color: #ddd;
+}
+.slick-list .slick-slide:nth-child(odd) {
+  background-color: #ccc;
+}
+.slick-arrow {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.slick-arrow:before {
+  font-size: 30px;
+}
+.slick-next {
+  right: 0;
+}
+.slick-prev {
+  left: 0;
+}
+
+.btn-wrap {
+  text-align: center;
+  width: 100%;
+}
+button {
+  background-color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+button.slick-disabled {
+  opacity: 0.6;
+}
+
+/* Custom CSS for adding indentation to all lines of text */
+.accordion-body {
+  text-indent: 40px; /* Adjust the value as needed for desired indentation */
+  text-align: center;
 }
