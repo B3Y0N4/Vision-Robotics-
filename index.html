@@ -37,7 +37,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="   ss" rel="stylesheet" />
   </head>
 
   <body>
@@ -754,7 +754,7 @@
       <!-- Service End -->
 
       <!-- Team Start -->
-      <div class="container-xxl py-6">
+      <div class="container-xxl py-6" id="afterCarouselContainer">
         <div class="container">
           <!-- Carousel Slide -->
           <div
@@ -799,11 +799,6 @@
                         <a
                           class="btn btn-square text-primary bg-white m-1"
                           href=""
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a
-                          class="btn btn-square text-primary bg-white m-1"
-                          href=""
                           ><i class="fab fa-twitter"></i
                         ></a>
                         <a
@@ -833,11 +828,6 @@
                         <a
                           class="btn btn-square text-primary bg-white m-1"
                           href=""
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a
-                          class="btn btn-square text-primary bg-white m-1"
-                          href=""
                           ><i class="fab fa-twitter"></i
                         ></a>
                         <a
@@ -864,11 +854,6 @@
                         alt=""
                       />
                       <div class="d-flex justify-content-center">
-                        <a
-                          class="btn btn-square text-primary bg-white m-1"
-                          href=""
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
                         <a
                           class="btn btn-square text-primary bg-white m-1"
                           href=""
@@ -902,11 +887,6 @@
                         <a
                           class="btn btn-square text-primary bg-white m-1"
                           href=""
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a
-                          class="btn btn-square text-primary bg-white m-1"
-                          href=""
                           ><i class="fab fa-twitter"></i
                         ></a>
                         <a
@@ -935,15 +915,10 @@
                       <p class="mb-4">Robotics Engineer</p>
                       <img
                         class="img-fluid rounded-circle w-100 mb-4"
-                        src="img/jalal.png"
+                        src="img/team-1.jpg"
                         alt=""
                       />
                       <div class="d-flex justify-content-center">
-                        <a
-                          class="btn btn-square text-primary bg-white m-1"
-                          href=""
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
                         <a
                           class="btn btn-square text-primary bg-white m-1"
                           href=""
@@ -976,11 +951,6 @@
                         <a
                           class="btn btn-square text-primary bg-white m-1"
                           href=""
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a
-                          class="btn btn-square text-primary bg-white m-1"
-                          href=""
                           ><i class="fab fa-twitter"></i
                         ></a>
                         <a
@@ -1007,11 +977,6 @@
                         alt=""
                       />
                       <div class="d-flex justify-content-center">
-                        <a
-                          class="btn btn-square text-primary bg-white m-1"
-                          href=""
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
                         <a
                           class="btn btn-square text-primary bg-white m-1"
                           href=""
@@ -1044,11 +1009,6 @@
                         <a
                           class="btn btn-square text-primary bg-white m-1"
                           href=""
-                          ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a
-                          class="btn btn-square text-primary bg-white m-1"
-                          href=""
                           ><i class="fab fa-twitter"></i
                         ></a>
                         <a
@@ -1064,6 +1024,7 @@
               <!-- Add more carousel items for additional slides -->
             </div>
 
+            <!-- Controls -->
             <!-- Controls -->
             <a
               class="carousel-control-prev"
@@ -1736,11 +1697,9 @@
           <div class="copyright">
             <div class="row">
               <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy; <a class="border-bottom" href="#">Vision Robotics</a> All
-                Right Reserved. Designed By
-                <a class="border-bottom" href="https://jalaLJR.com"
-                  >jalaLJR.com</a
-                >
+                &copy; <a class="border-bottom" href="#"> </a> All Right
+                Reserved.
+                <a class="border-bottom" href="https://jalaLJR.com"></a>
               </div>
               <div class="col-md-6 text-center text-md-end">
                 <div class="footer-menu">
@@ -1887,6 +1846,33 @@
 
         // Call the updateCarouselSlideCaption() initially to set the correct caption
         updateCarouselSlideCaption();
+      });
+    </script>
+    <script>
+      // Initialize the Wow.js library for animations
+      new WOW().init();
+    </script>
+    <script>
+      // Wait for the page to load
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the carousel controls
+        const prevButton = document.querySelector(".carousel-control-prev");
+        const nextButton = document.querySelector(".carousel-control-next");
+
+        // Get the container to scroll to
+        const afterCarouselContainer = document.getElementById(
+          "afterCarouselContainer"
+        );
+
+        // Function to scroll down a little bit
+        function scrollDown() {
+          // You can adjust the value (-100 in this case) to control how much the page scrolls down
+          window.scrollBy(0, -100);
+        }
+
+        // Add click event listeners to the carousel controls
+        prevButton.addEventListener("click", scrollDown);
+        nextButton.addEventListener("click", scrollDown);
       });
     </script>
   </body>
